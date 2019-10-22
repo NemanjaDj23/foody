@@ -1,0 +1,256 @@
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+}
+
+body {
+  font-size: 16px;
+  font-family: "Lato", "Arial Narrow", Arial, sans-serif;
+  line-height: 1.45;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.foody-header {
+  position: fixed;
+  width: 27%;
+  height: 100vh;
+  text-align: center;
+  background-image: url("/foody-header.3190897b.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+.foody-header .foody-inner {
+  margin: 8rem auto;
+  width: 80%;
+  transform: scale(1);
+  opacity: 1;
+  transition: 1s cubic-bezier(0.42, 0.66, 0.14, 1);
+}
+.foody-header .foody-inner .foody-header-logo {
+  width: auto;
+  height: 5rem;
+}
+.foody-header .foody-inner .foody-header-title {
+  font-family: "Leckerli One", cursive;
+  margin: 0.5rem auto;
+}
+.foody-header .foody-inner .foody-header-title a {
+  color: #fff;
+  text-decoration: none;
+}
+.foody-header .foody-overlay {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background-color: #16a085;
+  opacity: 0.1;
+  z-index: -1;
+  transition: 1s cubic-bezier(0.42, 0.66, 0.14, 1);
+}
+.foody-header-active .foody-inner {
+  transform: scale(0.6);
+  opacity: 0;
+}
+.foody-header-active .foody-overlay {
+  opacity: 1;
+}
+
+@media only screen and (max-width: 992px) {
+  .foody-header {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+  }
+  .foody-header .foody-inner {
+    position: absolute;
+    width: 100%;
+    transform: none;
+  }
+  .foody-header .foody-overlay {
+    display: none;
+  }
+}
+.foody-navigation {
+  display: block;
+  position: fixed;
+  left: -27%;
+  width: 27%;
+  height: 100vh;
+  background-color: transparent;
+  overflow: hidden;
+  z-index: 5;
+  transition: 1s cubic-bezier(0.42, 0.66, 0.14, 1);
+}
+.foody-navigation ul {
+  margin-top: 8rem;
+  padding: 0;
+  list-style-type: none;
+}
+.foody-navigation ul li {
+  position: relative;
+  left: -20rem;
+  line-height: 1;
+  padding-left: 2.5rem;
+  margin-bottom: 2rem;
+  border-left: 1px solid transparent;
+  transition: 0.5s cubic-bezier(0.42, 0.66, 0.14, 1);
+}
+.foody-navigation ul li:nth-child(1) {
+  transition-delay: 0.1s;
+}
+.foody-navigation ul li:nth-child(2) {
+  transition-delay: 0.22s;
+}
+.foody-navigation ul li:nth-child(3) {
+  transition-delay: 0.34s;
+}
+.foody-navigation ul li:nth-child(4) {
+  transition-delay: 0.46s;
+}
+.foody-navigation ul li:nth-child(5) {
+  transition-delay: 0.58s;
+}
+.foody-navigation ul li .nav-current {
+  font-weight: bold;
+}
+.foody-navigation ul li a {
+  font-size: 1.3rem;
+  font-family: "Lato", "Arial Narrow", Arial, sans-serif;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.5s cubic-bezier(0.42, 0.66, 0.14, 1);
+}
+.foody-navigation ul li:hover {
+  border-left: 1px solid #fff;
+}
+.foody-navigation ul li:hover a {
+  color: #fff;
+}
+.foody-navigation-active {
+  left: 0%;
+}
+.foody-navigation-active ul li {
+  left: 2rem;
+}
+
+/****** Navigation button ******/
+.foody-navigation-button {
+  display: block;
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  width: 6rem;
+  height: 28px;
+  font-family: "Lato", "Arial Narrow", Arial, sans-serif;
+  font-size: 1.3rem;
+  font-weight: 300;
+  text-align: left;
+  color: #fff;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 0;
+  z-index: 10;
+  cursor: pointer;
+}
+.foody-navigation-button::after {
+  content: "MENU";
+  position: absolute;
+  left: 40px;
+  line-height: 28px;
+}
+.foody-navigation-button .nav-icon {
+  width: 32px;
+  height: 20px;
+  position: relative;
+  display: inline-block;
+  margin: 4px auto;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+.foody-navigation-button .nav-icon span {
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #fff;
+  border-radius: 4px;
+  opacity: 1;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+.foody-navigation-button .nav-icon span:nth-child(1) {
+  top: 0;
+}
+.foody-navigation-button .nav-icon span:nth-child(2) {
+  top: 8px;
+}
+.foody-navigation-button .nav-icon span:nth-child(3) {
+  top: 16px;
+}
+.foody-navigation-button .nav-icon-open span:nth-child(1) {
+  top: 8px;
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+.foody-navigation-button .nav-icon-open span:nth-child(2) {
+  opacity: 0;
+  left: -60px;
+}
+.foody-navigation-button .nav-icon-open span:nth-child(3) {
+  top: 8px;
+  -webkit-transform: rotate(-135deg);
+  -moz-transform: rotate(-135deg);
+  -o-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+}
+
+@media only screen and (max-width: 992px) {
+  .foody-navigation {
+    left: -100%;
+    width: 100%;
+    background-color: #16a085;
+  }
+  .foody-navigation ul li {
+    width: calc(100% - 4rem);
+    left: 2rem;
+    text-align: center;
+    padding-left: 0;
+  }
+  .foody-navigation-active {
+    left: 0%;
+  }
+}
+.foody-main {
+  width: 73%;
+  min-height: 100vh;
+  float: right;
+}
+
+/*# sourceMappingURL=/foody.c32be076.css.map */
